@@ -37,6 +37,10 @@ body{
   background-color:#3d3d3d;
 }
 
+.card:hover{
+  cursor: pointer;
+}
+
 .card .title h2{
   padding: 0;
   margin:0;
@@ -48,7 +52,15 @@ body{
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background-color:#9dd465;
+  /*background-color:#9dd465;*/
+  background: linear-gradient(to top right, #9dd465, #3d3d3d 25%);
+  background-size: 400% 400%;
+  background-position: 0 0;
+  animation: bg-out 300ms ease-in forwards 1;
+}
+
+.card:hover .img{
+animation: bg-in 300ms ease-in forwards 1;
 }
 
 .card .img img{
@@ -82,4 +94,22 @@ body{
   .card{
     width: calc(100% - 20px);
   }
+}
+
+@keyframes bg-in{
+  0%{
+   background-position: 0% 50%; 
+  }
+  100%{
+    background-position: 0% 100%; 
+   }
+}
+
+@keyframes bg-out{
+  0%{
+   background-position: 0% 100%; 
+  }
+  100%{
+    background-position: 0% 50%; 
+   }
 }
